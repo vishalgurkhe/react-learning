@@ -4,6 +4,8 @@ import { useState } from "react";
 function Counter() {
   //let count=10;
   const [count, changeCount] = useState(0);
+  
+  const [isOn,setIsOn]=useState(false);
 
   return (
     <div>
@@ -29,6 +31,21 @@ function Counter() {
       >
         Decrement
       </button>
+
+      <hr>
+      </hr>
+
+        <button onClick={()=>setIsOn(!isOn)}>
+          {!isOn?"On":"off"}
+        </button>
+
+        <p>{isOn}</p>
+
+       {isOn?
+      <h1>State is On</h1> :
+      <h1>State is Off</h1>
+      } 
+
     </div>
   );
 }
